@@ -24,7 +24,7 @@ fi
 #name format
 str=$(echo $line | awk -F , '{print $5}')
 namesurname=$(echo  $str | awk '{for (i=1;i <=NF; i++) {sub(".",substr(toupper($i),1,1),$i)} print}')
-#email
+#mail
 name=$(echo $str | awk '{print substr($0,1,1)}')
 surname=$(echo $str | awk -F' ' ' {print $2}')
 var3="$name$surname"
