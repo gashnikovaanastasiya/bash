@@ -17,7 +17,7 @@ sed -i 's|Riga|Minsk|' /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf
 sed -i 's|;||' /etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf
 systemctl restart zabbix-server zabbix-agent httpd rh-php72-php-fpm
 systemctl enable zabbix-server zabbix-agent httpd rh-php72-php-fpm
-#job failed so
+
 mysql -u root --password="$psw" --execute="alter user 'zabbix'@'localhost' identified with mysql_native_password by 'New_password1';grant all privileges on zabbix.* to zabbix@localhost;flush privileges;"
 systemctl restart zabbix-server zabbix-agent httpd rh-php72-php-fpm
 setsebool -P httpd_can_network_connect on
